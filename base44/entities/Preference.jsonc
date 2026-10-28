@@ -1,0 +1,43 @@
+{
+  "name": "Preference",
+  "type": "object",
+  "properties": {
+    "theme": {
+      "type": "string",
+      "enum": [
+        "dark",
+        "light"
+      ],
+      "default": "dark",
+      "description": "Th\u00e8me de l'interface"
+    },
+    "language": {
+      "type": "string",
+      "default": "fr",
+      "description": "Langue de l'application"
+    },
+    "grid_defaults": {
+      "type": "object",
+      "description": "Valeurs par d\u00e9faut du quadrillage pour les nouveaux projets"
+    },
+    "export_defaults": {
+      "type": "object",
+      "description": "Valeurs par d\u00e9faut de l'exportation"
+    }
+  },
+  "required": [],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

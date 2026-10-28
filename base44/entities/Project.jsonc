@@ -1,0 +1,154 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nom du projet"
+    },
+    "image_file_uri": {
+      "type": "string",
+      "description": "R\u00e9f\u00e9rence priv\u00e9e du fichier image original"
+    },
+    "image_name": {
+      "type": "string",
+      "description": "Nom du fichier d'origine"
+    },
+    "image_width": {
+      "type": "number",
+      "description": "Largeur naturelle de l'image originale"
+    },
+    "image_height": {
+      "type": "number",
+      "description": "Hauteur naturelle de l'image originale"
+    },
+    "transform": {
+      "type": "object",
+      "description": "Recadrage, rotation, miroirs et dimensions de sortie",
+      "properties": {
+        "crop": {
+          "type": "object"
+        },
+        "rotate": {
+          "type": "number"
+        },
+        "flipH": {
+          "type": "boolean"
+        },
+        "flipV": {
+          "type": "boolean"
+        },
+        "outWidth": {
+          "type": "number"
+        },
+        "outHeight": {
+          "type": "number"
+        }
+      }
+    },
+    "filters": {
+      "type": "object",
+      "description": "R\u00e9glages artistiques appliqu\u00e9s \u00e0 l'aper\u00e7u et \u00e0 l'export",
+      "properties": {
+        "grayscale": {
+          "type": "boolean"
+        },
+        "brightness": {
+          "type": "number"
+        },
+        "contrast": {
+          "type": "number"
+        },
+        "saturation": {
+          "type": "number"
+        },
+        "edges": {
+          "type": "number"
+        },
+        "sketch": {
+          "type": "number"
+        }
+      }
+    },
+    "grid": {
+      "type": "object",
+      "description": "Param\u00e8tres du quadrillage",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "cols": {
+          "type": "number"
+        },
+        "rows": {
+          "type": "number"
+        },
+        "square": {
+          "type": "boolean"
+        },
+        "color": {
+          "type": "string"
+        },
+        "opacity": {
+          "type": "number"
+        },
+        "thickness": {
+          "type": "number"
+        },
+        "dashed": {
+          "type": "boolean"
+        },
+        "diagonals": {
+          "type": "boolean"
+        },
+        "coords": {
+          "type": "boolean"
+        },
+        "coordSystem": {
+          "type": "string"
+        },
+        "coordSize": {
+          "type": "number"
+        }
+      }
+    },
+    "export_settings": {
+      "type": "object",
+      "description": "Pr\u00e9f\u00e9rences d'exportation du projet",
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "width": {
+          "type": "number"
+        },
+        "quality": {
+          "type": "number"
+        },
+        "withGrid": {
+          "type": "boolean"
+        },
+        "withCoords": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
